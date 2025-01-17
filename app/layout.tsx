@@ -1,6 +1,7 @@
 import { CartProvider } from '../context/CartContext'
 import Header from '../components/Header'
 import './globals.css'
+import Footer from '@/components/Footer'
 
 export default function RootLayout({
   children,
@@ -13,6 +14,7 @@ export default function RootLayout({
         <CartProvider>
           <Header />
           {children}
+          <Footer/>
         </CartProvider>
       </body>
     </html>
