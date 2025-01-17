@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="space-y-8 xl:col-span-1">
-            <h2 className="text-2xl font-bold text-green-400 tracking-wide uppercase logo-font">Agri-Connect</h2>
+            <h2 className="text-2xl font-bold text-green-400 tracking-wide  logo-font">Agri-Connect</h2>
             <p className="text-gray-400 text-sm">
               Connecting farmers, transport providers, and consumers for a sustainable agricultural ecosystem.
             </p>
@@ -132,7 +132,7 @@ export default function Footer() {
                   <li className="flex items-start">
                     <MapPin className="mr-2 h-5 w-5 text-green-400 mt-1" />
                     <span className="text-base text-gray-400">
-                      123 Farm Road,<br />Agritown, AG 12345,<br />United States
+                      Nakimbugwe Building,<br />First Floor,<br />Room 2
                     </span>
                   </li>
                 </ul>
@@ -142,7 +142,7 @@ export default function Footer() {
         </div>
         <div className="mt-12 border-t border-gray-700 pt-8">
           <p className="text-base text-gray-400 xl:text-center">
-            &copy; 2025 AgriConnect, Inc. All rights reserved.
+            &copy; 2025 Agri-Connect, Inc. All rights reserved.
           </p>
         </div>
         <div className="mt-4 text-center">

@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Image from 'next/image'
 import { Pencil, Trash2, Plus, Package, DollarSign, TrendingUp } from 'lucide-react'
 import AddProductForm from '../../components/AddProductForm'
+import Link from 'next/link'
 
 interface Product {
   id: number
@@ -20,7 +21,7 @@ export default function FarmersDashboard() {
     { id: 2, name: 'Organic Carrots', category: 'Vegetables', price: 1.99, inStock: true, isRentable: false },
     { id: 3, name: 'Tractor', category: 'Farm Equipment', price: 199.99, inStock: false, isRentable: true },
   ])
-  const [isAddingProduct, setIsAddingProduct] = useState(false)
+
 
   const handleDelete = (id: number) => {
     setProducts(products.filter(product => product.id !== id))
@@ -72,19 +73,17 @@ export default function FarmersDashboard() {
           <div className="p-6">
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-xl font-semibold text-gray-800">Your Products</h2>
+              <Link href="/new/category">
               <button
-                onClick={() => setIsAddingProduct(!isAddingProduct)}
                 className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded inline-flex items-center"
               >
                 <Plus size={20} className="mr-2" />
                 Add Product
               </button>
+              </Link>
+              
             </div>
-            {isAddingProduct && (
-              <div className="mb-6">
-                <AddProductForm />
-              </div>
-            )}
+            
             <div className="overflow-x-auto">
               <table className="w-full text-left">
                 <thead>
