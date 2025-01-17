@@ -26,7 +26,6 @@ function CategoryCard({ category }: CategoryCardProps) {
 
   return (
     <div
-      ref={targetRef}
       className={`bg-white rounded-lg shadow-md overflow-hidden transition-opacity duration-500 ${
         isIntersecting ? 'opacity-100' : 'opacity-0'
       }`}
