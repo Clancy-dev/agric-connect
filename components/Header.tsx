@@ -52,8 +52,8 @@ export default function Header() {
     <>
       <header className="bg-gradient-to-r from-green-600 to-green-400 text-white p-4 sticky top-0 z-50">
         <div className="container mx-auto flex justify-between items-center">
-          <Link href="/" className="text-2xl font-bold">
-            AgriConnect
+          <Link href="/" className="text-2xl font-bold logo-font">
+            Agri-Connect
           </Link>
           <nav className="hidden md:flex space-x-4">
             {navItems.map((item) => (
