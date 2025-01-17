@@ -34,6 +34,7 @@ export async function fetchCategory(){
     
    } catch (error) {
     console.log(error)
+    return []; // Return empty array on failure
    }
 
 }
