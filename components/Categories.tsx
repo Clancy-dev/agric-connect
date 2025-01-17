@@ -1,7 +1,6 @@
 'use client'
 
 import Image from 'next/image'
-import { useIntersectionObserver } from '../utils/useIntersectionObserver'
 
 interface Category {
   id: number
@@ -22,13 +21,9 @@ const categories: Category[] = [
 ]
 
 function CategoryCard({ category }: CategoryCardProps) {
-  const [targetRef, isIntersecting] = useIntersectionObserver({ threshold: 0.1 })
-
   return (
     <div
-      className={`bg-white rounded-lg shadow-md overflow-hidden transition-opacity duration-500 ${
-        isIntersecting ? 'opacity-100' : 'opacity-0'
-      }`}
+      className="bg-white rounded-lg shadow-md overflow-hidden transition-opacity duration-500 opacity-100"
     >
       <Image
         src={category.image || "/placeholder.svg"}
@@ -58,4 +53,3 @@ export default function Categories() {
     </section>
   )
 }
-

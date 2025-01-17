@@ -2,7 +2,6 @@
 
 import Image from 'next/image'
 import { Star, ShoppingCart, Truck } from 'lucide-react'
-import { useIntersectionObserver } from '../utils/useIntersectionObserver'
 import { useCart } from '../context/CartContext'
 
 interface Product {
@@ -58,7 +57,6 @@ const products: Product[] = [
 ]
 
 function ProductCard({ product }: ProductCardProps) {
-  const [targetRef, isIntersecting] = useIntersectionObserver({ threshold: 0.1 })
   const { addToCart, removeFromCart, isInCart } = useCart()
 
   const handleCartAction = () => {
@@ -71,9 +69,7 @@ function ProductCard({ product }: ProductCardProps) {
 
   return (
     <div
-      className={`bg-white rounded-lg shadow-md overflow-hidden transition-opacity duration-500 ${
-        isIntersecting ? 'opacity-100' : 'opacity-0'
-      }`}
+      className="bg-white rounded-lg shadow-md overflow-hidden transition-opacity duration-500"
     >
       <Image
         src={product.image || "/placeholder.svg"}
@@ -143,4 +139,3 @@ export default function Products() {
     </section>
   )
 }
-
