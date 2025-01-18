@@ -52,7 +52,20 @@ export default function Header() {
     <>
       <header className="bg-gradient-to-r from-green-600 to-green-400 text-white p-4 sticky top-0 z-50">
         <div className="container mx-auto flex justify-between items-center">
-          <Link href="/" className="text-2xl font-bold logo-font">
+          <Link href="/" className="text-2xl font-bold logo-font flex items-center justify-center gap-2">
+          <div className='w-30 h-30'>
+            <Image
+            alt="logo"
+            src="/ac-logo.png"
+            width={50}
+            height={50}
+            className="w-full h-full object-cover rounded-[50px]"
+            />
+
+          </div>
+          
+
+
             Agri-Connect
           </Link>
           <nav className="hidden md:flex space-x-4">

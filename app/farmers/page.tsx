@@ -37,7 +37,7 @@ export default function FarmersDashboard() {
         <div className="bg-white rounded-lg shadow-md p-6 mb-8">
           <div className="flex items-center mb-6">
             <Image
-              src="/placeholder.svg"
+              src="/farmer-pic.png"
               alt="Farmer's profile"
               width={64}
               height={64}
@@ -69,6 +69,51 @@ export default function FarmersDashboard() {
             </div>
           </div>
         </div>
+        <div className="bg-white rounded-lg shadow-md overflow-hidden">
+          <div className="p-6">
+            <div className="flex justify-between items-center mb-4">
+              <h2 className="text-xl font-semibold text-gray-800">Your Categories</h2>
+              <Link href="/new/category">
+              <button
+                className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded inline-flex items-center"
+              >
+                <Plus size={20} className="mr-2" />
+                Add Category
+              </button>
+              </Link>
+              
+            </div>
+            
+            {/* Categories */}
+            <div className="overflow-x-auto">
+              <table className="w-full text-left">
+                <thead>
+                  <tr className="bg-gray-100">
+                    <th className="px-4 py-2">Category</th>
+                    <th className="px-4 py-2">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {products.map((product) => (
+                    <tr key={product.id} className="border-b">
+                      <td className="px-4 py-2">{product.category}</td>
+                      <td className="px-4 py-2">
+                        <button className="text-blue-500 hover:text-blue-700 mr-2">
+                          <Pencil size={20} />
+                        </button>
+                        <button className="text-red-500 hover:text-red-700" onClick={() => handleDelete(product.id)}>
+                          <Trash2 size={20} />
+                        </button>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        {/* Products */}
         <div className="bg-white rounded-lg shadow-md overflow-hidden">
           <div className="p-6">
             <div className="flex justify-between items-center mb-4">
