@@ -13,7 +13,7 @@ interface CategoryCardProps {
 
 function CategoryCard({ category }: CategoryCardProps) {
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden transition-opacity duration-500 opacity-100 p-7 py-0">
+    <div className="bg-white rounded-lg shadow-md overflow-hidden transition-opacity duration-500 opacity-100 p-7 py-2">
       <Image
         src={category.image || '/placeholder.svg'}
         alt={category.title}
