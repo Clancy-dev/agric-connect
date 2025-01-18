@@ -12,6 +12,7 @@ interface Order {
   date: string
 }
 
+// freedom
 export default function ConsumersDashboard() {
   const [orders, setOrders] = useState<Order[]>([
     { id: 1, items: ['Fresh Apples', 'Organic Carrots'], total: 15.99, status: 'Delivered', date: '2023-05-15' },
