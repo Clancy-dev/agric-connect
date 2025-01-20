@@ -8,6 +8,7 @@ import { fetchCategory } from "@/actions/Category"; // Import the fetchCategory 
 import Image from "next/image"; // Import Image component
 import { UploadButton } from "@/utils/uploadthing";
 import { createNewProduct } from "@/actions/Product";
+import { revalidatePath } from "next/cache";
 
 type Category = {
   id: string;
@@ -60,6 +61,7 @@ export default function ProductForm() {
       console.log(newPrdt);
       toast.success("Product created successfully.");
       router.push("/");
+      revalidatePath("/");
       router.refresh();
       reset();
     } catch (error) {

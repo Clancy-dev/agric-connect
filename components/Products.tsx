@@ -11,6 +11,8 @@ import Image from 'next/image';
      image: string;
      price: number;
   }
+
+  
  
   interface ProductCardProps {
        product: Productt;

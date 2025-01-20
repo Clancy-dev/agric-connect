@@ -2,6 +2,7 @@
 
 import { ProductProps } from "@/components/Forms/ProductForm";
 import { db } from "@/prisma/db";
+import { revalidatePath } from "next/cache";
 
 export async function createNewProduct(data:ProductProps){
   try {
@@ -31,8 +32,9 @@ export async function fetchProduct(){
       }
      }) 
      console.log(fetchedProduct)
-  
+    revalidatePath("/")
     return fetchedProduct
+    
     
    } catch (error) {
     console.log(error)
