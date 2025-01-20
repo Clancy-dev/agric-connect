@@ -22,17 +22,15 @@ export async function createNewProduct(data:ProductProps){
 
 
 
+
 export async function fetchProduct(){
   try {
     const fetchedProduct = await db.productt.findMany({
-      
-      
       orderBy:{
         createdAt:"desc"
       }
      }) 
-      console.log(fetchedProduct)
- 
+     console.log(fetchedProduct)
   
     return fetchedProduct
     
@@ -42,7 +40,6 @@ export async function fetchProduct(){
    }
 
 }
-
 
 
 

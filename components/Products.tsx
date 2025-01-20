@@ -1,20 +1,19 @@
-import { fetchCategory } from '@/actions/Category';
 import { fetchProduct } from '@/actions/Product';
-import { ShoppingCart, Star } from 'lucide-react';
- import Image from 'next/image';
-import { Button } from './ui/button';
-import { useCart } from '@/context/CartContext';
+import {Star } from 'lucide-react';
+import Image from 'next/image';
+
  
- interface Product {
+ interface Productt {
      id: string;
      title: string;
      categoryTitle:string;
+     categoryId:string;
      image: string;
      price: number;
   }
  
   interface ProductCardProps {
-       product: Product;
+       product: Productt;
      }
  
  
@@ -22,10 +21,9 @@ import { useCart } from '@/context/CartContext';
  // ********************************
  //  The Container of Product Card *********
  // ********************************
- export default async function Categories() {
-   const products: Product[] = await fetchProduct();
+ export default async function Products() {
+   const products: Productt[] = await fetchProduct();
    console.log(products)
- console.log(products)
    return (
      <section className="py-12 bg-green-50">
        <div className="w-full p-4">
@@ -77,6 +75,9 @@ import { useCart } from '@/context/CartContext';
        {[1, 2, 3, 4, 5].map((star) => (
             <Star key={star} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
           ))}
+       </div>
+       <div className="w-full min-h-[5vh]">
+         <h3 className="text-lg font-semibold text-green-900">{product.price}</h3>
        </div>
        {/* <div className="p-4 w-full bg-blue-500">
        
