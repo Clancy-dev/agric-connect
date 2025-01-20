@@ -31,13 +31,11 @@ export async function fetchProduct(){
         createdAt:"desc"
       }
      }) 
-     console.log(fetchedProduct)
-    revalidatePath("/")
+     console.log("Fetched Products:", fetchedProduct);
     return fetchedProduct
-    
-    
+
    } catch (error) {
-    console.log(error)
+    console.error("Error fetching products:", error);
     return []; // Return empty array on failure
    }
 

@@ -39,7 +39,7 @@ import Image from 'next/image';
                <ProductCard key={product.id} product={product} />
              ))
            ) : (
-             <p className="text-gray-500 text-center col-span-full">No categories available.</p>
+             <p className="text-gray-500 text-center col-span-full">No Products available.</p>
            )}
          </div>
        </div>
