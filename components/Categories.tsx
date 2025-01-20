@@ -11,25 +11,13 @@ interface CategoryCardProps {
   category: Category;
 }
 
-function CategoryCard({ category }: CategoryCardProps) {
-  return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden transition-opacity duration-500 opacity-100 p-7 py-2">
-      <Image
-        src={category.image || '/placeholder.svg'}
-        alt={category.title}
-        width={200}
-        height={200}
-        className="w-full h-40 object-cover rounded-[60px] border-[3px] border-green-900"
-      />
-      <div className="p-4">
-        <h3 className="text-lg font-semibold text-center text-green-900">{category.title}</h3>
-      </div>
-    </div>
-  );
-}
 
+
+// ********************************
+//  The Container of Category Card *********
+// ********************************
 export default async function Categories() {
-  // Fetch categories on the server
+
   const categories: Category[] = await fetchCategory();
 
   return (
@@ -49,3 +37,27 @@ export default async function Categories() {
     </section>
   );
 }
+
+
+// ********************************
+//  The Actual Category Card *********
+// ********************************
+function CategoryCard({ category }: CategoryCardProps) {
+  return (
+    <div className=" rounded-lg shadow-md overflow-hidden transition-opacity duration-500 opacity-100 p-2 bg-white">
+      <div className='w-full flex items-center justify-center h-[47vh] rounded-[50%] border-[2px] border-green-300 p-2 bg-green'>
+      <Image
+        src={category.image || '/placeholder.svg'}
+        alt={category.title}
+        width={200}
+        height={200}
+        className="w-full h-full object-cover rounded-[50%]"
+      />
+      </div>
+      <div className="p-4">
+        <h3 className="text-lg font-semibold text-center text-green-900">{category.title}</h3>
+      </div>
+    </div>
+  );
+}
+

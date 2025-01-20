@@ -70,6 +70,8 @@ export default function CategoryForm() {
               <p className="text-sm text-red-500">{errors.title.message}</p>
             )}
           </div>
+          
+          {/* imagepart */}
 
           <div className="space-y-2 ">
           <Label htmlFor="title" className="text-gray-700">Category Image</Label>
