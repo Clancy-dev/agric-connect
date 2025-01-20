@@ -61,7 +61,6 @@ export default function ProductForm() {
       console.log(newPrdt);
       toast.success("Product created successfully.");
       router.push("/");
-      revalidatePath("/");
       router.refresh();
       reset();
     } catch (error) {

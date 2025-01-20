@@ -4,12 +4,13 @@ import Image from 'next/image';
 
  
  interface Productt {
-     id: string;
-     title: string;
-     categoryTitle:string;
-     categoryId:string;
-     image: string;
-     price: number;
+  id: string;
+  title: string;
+  categoryTitle: string;
+  categoryId: string;
+  price: number;
+  image: string;
+  slug: string;
   }
 
   
